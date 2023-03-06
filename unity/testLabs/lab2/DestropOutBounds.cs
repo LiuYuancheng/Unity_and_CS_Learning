@@ -18,6 +18,7 @@ public class DestropOutBounds : MonoBehaviour
         if(transform.position.z > topBound){
             Destroy(gameObject);
         } else if(transform.position.z < lowerBound){
+            Debug.Log("Miss one !");
             Destroy(gameObject);
         }
     }

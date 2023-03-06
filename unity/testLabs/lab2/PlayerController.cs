@@ -8,6 +8,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 10f;
     public float rangeX = 10f;
     public GameObject projectilePrefab;
+
+    public Camera mainCamera;
+    public Camera hoodCamera;
+    public KeyCode switchKey;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +35,12 @@ public class PlayerController : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.Space)){
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
+
+         if(Input.GetKeyDown(switchKey)){
+            mainCamera.enabled = !mainCamera.enabled;
+            hoodCamera.enabled = !hoodCamera.enabled;
+
         }
     }
 }
